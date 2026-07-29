@@ -5,11 +5,11 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin", "vietnamese"] });
 
 export const metadata: Metadata = {
-  title: "Cuong | Node.js Backend Developer",
+  title: "Hoang Manh Cuong | Node.js Backend Developer",
   description:
     "Portfolio cá nhân tập trung Node.js, NestJS, REST API, database và các dự án backend/full-stack.",
   openGraph: {
-    title: "Cuong | Node.js Backend Developer",
+    title: "Hoang Manh Cuong | Node.js Backend Developer",
     description:
       "Portfolio Node.js Backend / Full-stack Developer với Next.js frontend và NestJS REST API.",
     type: "website"

@@ -1,11 +1,15 @@
 export const profile = {
-  name: "Cuong",
+  name: "Hoang Manh Cuong",
   role: "Node.js Backend / Full-stack Developer",
   headline:
     "Fresher developer tập trung xây dựng REST API rõ ràng, backend NestJS có cấu trúc và sản phẩm web có thể chạy thật.",
   email: "your.email@example.com",
+  phone: "0336388758",
+  zalo: "0336388758",
   github: "https://github.com/cuongherok4",
-  linkedin: "https://www.linkedin.com/in/your-profile",
+  facebook: "https://www.facebook.com/hoang.manh.cuong.953981/",
+  linkedin: "",
+  gpa: "3.63",
   cvUrl: "/cv.pdf"
 };
 
@@ -41,14 +45,15 @@ export const skills = [
 
 export const projects = [
   {
-    name: "VPT Ecosystem MVP",
-    type: "Backend/System",
+    name: "VPT Code Arena",
+    type: "Full-stack / Coding Platform",
     problem:
-      "Xây dựng MVP hệ sinh thái với nhiều module nghiệp vụ, cần API rõ ràng và dữ liệu nhất quán.",
-    role: "Thiết kế API, tổ chức backend, tích hợp cache và triển khai môi trường chạy bằng Docker.",
-    stack: ["Spring Boot", "Next.js", "MySQL", "Redis", "Docker"],
+      "Xây dựng nền tảng luyện tập/làm bài lập trình, cần tổ chức dữ liệu bài toán, người dùng và luồng nộp bài rõ ràng.",
+    role: "Thiết kế cấu trúc ứng dụng, phát triển các luồng backend và giao diện phục vụ trải nghiệm luyện code.",
+    stack: ["Next.js", "Node.js", "REST API", "Database"],
     result:
-      "Tập trung vào kiến trúc hệ thống, phân tách module và luồng dữ liệu dễ mở rộng."
+      "Dự án thể hiện khả năng triển khai sản phẩm full-stack có bài toán nghiệp vụ cụ thể.",
+    repo: "https://github.com/cuongherok4/vpt-code-arena"
   },
   {
     name: "Personal Portfolio API",
@@ -58,17 +63,42 @@ export const projects = [
     role: "Dựng Next.js App Router, NestJS REST API, contact endpoint và cấu trúc monorepo.",
     stack: ["Next.js", "NestJS", "TypeScript", "REST API"],
     result:
-      "Trang portfolio có backend thật, dễ bổ sung database, email service và analytics tải CV."
+      "Trang portfolio có backend thật, dễ bổ sung database, email service và analytics tải CV.",
+    repo: "https://github.com/cuongherok4/portfolio"
   },
   {
-    name: "Laravel Phone Store Admin Panel",
+    name: "Phone Store",
     type: "Backend Admin",
     problem:
       "Quản lý sản phẩm điện thoại với biến thể, thuộc tính, hình ảnh và quy trình CRUD.",
     role: "Xây dựng luồng quản trị, model dữ liệu và các màn hình thao tác nội bộ.",
     stack: ["Laravel", "MySQL", "Blade", "Bootstrap"],
     result:
-      "Nhấn mạnh tư duy backend CRUD, quan hệ dữ liệu và thao tác quản trị thực tế."
+      "Nhấn mạnh tư duy backend CRUD, quan hệ dữ liệu và thao tác quản trị thực tế.",
+    repo: "https://github.com/cuongherok4/phone-store"
+  },
+  {
+    name: "AI Scam Call Detection Backend",
+    type: "Node.js / AI Backend",
+    problem:
+      "Phát hiện cuộc gọi lừa đảo bằng AI, cần backend tiếp nhận dữ liệu và phục vụ luồng xử lý/phân tích.",
+    role: "Phát triển backend cho ứng dụng AI scam detection, tập trung API và luồng tích hợp mô hình.",
+    stack: ["Node.js", "Backend API", "AI Integration"],
+    result:
+      "Dự án kết nối trực tiếp năng lực backend Node.js với bài toán AI có tính ứng dụng.",
+    repo: "https://github.com/cuongherok4/ai-scam-call-detection-backend",
+    article: "https://vjai.org.vn/vn/vjai/article/view/21/190"
+  },
+  {
+    name: "Blockchain Copyright Registration",
+    type: "Blockchain / Backend",
+    problem:
+      "Ứng dụng blockchain vào đăng ký bản quyền, cần quản lý dữ liệu và minh chứng sở hữu minh bạch.",
+    role: "Xây dựng luồng đăng ký, lưu trữ thông tin bản quyền và tích hợp logic blockchain.",
+    stack: ["Blockchain", "Smart Contract", "Backend"],
+    result:
+      "Thể hiện khả năng tìm hiểu công nghệ mới và áp dụng vào bài toán xác thực dữ liệu.",
+    repo: "https://github.com/cuongherok4/Using-blockchain-to-register-copyright"
   },
   {
     name: "RAG Laptop Advisory Chatbot",
@@ -79,16 +109,6 @@ export const projects = [
     stack: ["LangChain", "ChromaDB", "Ollama", "Llama3.2:3b"],
     result:
       "Thể hiện khả năng kết hợp backend workflow với AI tooling trong bài toán có ngữ cảnh."
-  },
-  {
-    name: "Vietnamese NL2SQL + Computer Vision Labs",
-    type: "AI / ML",
-    problem:
-      "Thử nghiệm fine-tuning mô hình tiếng Việt cho NL2SQL và nhận diện ảnh cơ bản.",
-    role: "Chuẩn bị dữ liệu, huấn luyện thử nghiệm và đánh giá luồng suy luận.",
-    stack: ["QLoRA", "PEFT", "YOLO", "Python"],
-    result:
-      "Là điểm cộng AI/ML, bổ trợ tư duy xử lý dữ liệu và đánh giá mô hình."
   }
 ];
 

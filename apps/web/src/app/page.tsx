@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowUpRight, Download, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowUpRight, Award, Download, ExternalLink, Github, Mail, Phone } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { SectionHeading } from "@/components/SectionHeading";
 import { experience, profile, projects, skills } from "@/data/profile";
@@ -77,6 +77,10 @@ export default function Home() {
           title="Tập trung vào backend có cấu trúc, API rõ ràng và sản phẩm chạy được."
           description="Mình ưu tiên Node.js/NestJS, REST API, database và cách tổ chức code dễ bảo trì. Ngoài backend chính, mình có kinh nghiệm với Next.js, Spring Boot, Laravel và một số dự án AI/ML."
         />
+        <div className="mb-6 inline-flex items-center gap-3 rounded-md border border-ink/10 bg-white px-4 py-3 shadow-soft">
+          <Award size={18} className="text-ember" />
+          <span className="text-sm font-semibold text-ink">GPA {profile.gpa}</span>
+        </div>
         <div className="grid gap-4 md:grid-cols-3">
           {["Backend-first", "Full-stack delivery", "AI/ML as a plus"].map((item) => (
             <div key={item} className="rounded-md border border-ink/10 bg-white p-5 shadow-soft">
@@ -130,6 +134,30 @@ export default function Home() {
                     {project.result}
                   </p>
                 </div>
+                <div className="mt-5 flex flex-wrap gap-3">
+                  {"repo" in project && project.repo ? (
+                    <a
+                      href={project.repo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex h-10 items-center gap-2 rounded-md border border-ink/15 px-4 text-sm font-semibold text-ink transition hover:border-moss hover:text-moss"
+                    >
+                      <Github size={16} />
+                      Repository
+                    </a>
+                  ) : null}
+                  {"article" in project && project.article ? (
+                    <a
+                      href={project.article}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex h-10 items-center gap-2 rounded-md border border-ink/15 px-4 text-sm font-semibold text-ink transition hover:border-moss hover:text-moss"
+                    >
+                      <ExternalLink size={16} />
+                      VJAI article
+                    </a>
+                  ) : null}
+                </div>
               </article>
             ))}
           </div>
@@ -174,20 +202,24 @@ export default function Home() {
           <SectionHeading
             eyebrow="Contact"
             title="Sẵn sàng trao đổi về vị trí Node.js/NestJS."
-            description="Thông tin liên hệ nên được cập nhật bằng email, LinkedIn, GitHub thật trước khi deploy."
+            description="Có thể liên hệ qua Zalo, Facebook, GitHub hoặc email."
           />
           <div className="grid gap-3">
             <a className="inline-flex items-center gap-3 text-ink/75 hover:text-moss" href={`mailto:${profile.email}`}>
               <Mail size={18} />
               {profile.email}
             </a>
+            <a className="inline-flex items-center gap-3 text-ink/75 hover:text-moss" href={`tel:${profile.phone}`}>
+              <Phone size={18} />
+              Zalo: {profile.zalo}
+            </a>
             <a className="inline-flex items-center gap-3 text-ink/75 hover:text-moss" href={profile.github}>
               <Github size={18} />
               GitHub
             </a>
-            <a className="inline-flex items-center gap-3 text-ink/75 hover:text-moss" href={profile.linkedin}>
-              <Linkedin size={18} />
-              LinkedIn
+            <a className="inline-flex items-center gap-3 text-ink/75 hover:text-moss" href={profile.facebook}>
+              <ExternalLink size={18} />
+              Facebook
             </a>
           </div>
         </div>
