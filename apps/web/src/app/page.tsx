@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { ArrowUpRight, Award, Download, ExternalLink, Github, Mail, Phone } from "lucide-react";
-import { ContactForm } from "@/components/ContactForm";
 import { SectionHeading } from "@/components/SectionHeading";
 import { experience, profile, projects, skills } from "@/data/profile";
 
@@ -38,7 +37,7 @@ export default function Home() {
 
       <section className="relative min-h-[calc(100vh-4rem)] overflow-hidden border-b border-ink/10">
         <Image
-          src="/images/backend-workspace.png"
+          src="/images/backend-workspace.webp"
           alt="Backend developer workspace"
           fill
           priority
@@ -101,8 +100,8 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-24">
           <SectionHeading
             eyebrow="Projects"
-            title="Dự án được viết theo bài toán, vai trò và kết quả."
-            description="Node.js/backend được đặt lên trước, các dự án AI/ML là điểm cộng bổ trợ."
+            title="Dự án cá nhân tự làm, sắp xếp theo mức độ nổi bật."
+            description="Các dự án sản phẩm chính được đặt trước, mỗi mục hiển thị rõ ngôn ngữ và phần backend tự làm."
           />
           <div className="grid gap-5">
             {projects.map((project) => (
@@ -126,7 +125,7 @@ export default function Home() {
                     {project.problem}
                   </p>
                   <p className="text-sm leading-6 text-ink/70">
-                    <span className="font-bold text-ink">Vai trò: </span>
+                    <span className="font-bold text-ink">Phần tự làm: </span>
                     {project.role}
                   </p>
                   <p className="text-sm leading-6 text-ink/70">
@@ -135,7 +134,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="mt-5 flex flex-wrap gap-3">
-                  {"repo" in project && project.repo ? (
+                  {project.repo ? (
                     <a
                       href={project.repo}
                       target="_blank"
@@ -146,7 +145,7 @@ export default function Home() {
                       Repository
                     </a>
                   ) : null}
-                  {"article" in project && project.article ? (
+                  {project.article ? (
                     <a
                       href={project.article}
                       target="_blank"
@@ -187,7 +186,7 @@ export default function Home() {
           <SectionHeading eyebrow="Experience" title="Kinh nghiệm thực tế với backend NestJS." />
           {experience.map((item) => (
             <article key={`${item.role}-${item.company}`} className="rounded-md border border-ink/10 p-5">
-              <p className="text-sm font-semibold text-ember">{item.period}</p>
+              {item.period ? <p className="text-sm font-semibold text-ember">{item.period}</p> : null}
               <h3 className="mt-1 text-2xl font-bold text-ink">
                 {item.role} · {item.company}
               </h3>
@@ -197,41 +196,36 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 md:grid-cols-[0.9fr_1.1fr] md:py-24">
-        <div>
-          <SectionHeading
-            eyebrow="Contact"
-            title="Sẵn sàng trao đổi về vị trí Node.js/NestJS."
-            description="Có thể liên hệ qua Zalo, Facebook, GitHub hoặc email."
-          />
-          <div className="grid gap-3">
-            <a className="inline-flex items-center gap-3 text-ink/75 hover:text-moss" href={`mailto:${profile.email}`}>
-              <Mail size={18} />
-              {profile.email}
-            </a>
-            <a className="inline-flex items-center gap-3 text-ink/75 hover:text-moss" href={`tel:${profile.phone}`}>
-              <Phone size={18} />
-              Zalo: {profile.zalo}
-            </a>
-            <a className="inline-flex items-center gap-3 text-ink/75 hover:text-moss" href={profile.github}>
-              <Github size={18} />
-              GitHub
-            </a>
-            <a className="inline-flex items-center gap-3 text-ink/75 hover:text-moss" href={profile.facebook}>
-              <ExternalLink size={18} />
-              Facebook
-            </a>
-          </div>
-        </div>
-        <div className="rounded-md border border-ink/10 bg-white p-5 shadow-soft">
-          <ContactForm />
+      <section id="contact" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-24">
+        <SectionHeading
+          eyebrow="Contact"
+          title="Sẵn sàng trao đổi về vị trí Node.js/NestJS."
+          description="Có thể liên hệ trực tiếp qua Gmail, Zalo, Facebook hoặc GitHub."
+        />
+        <div className="grid gap-3 rounded-md border border-ink/10 bg-white p-5 shadow-soft md:grid-cols-2">
+          <a className="inline-flex items-center gap-3 text-ink/75 hover:text-moss" href={`mailto:${profile.email}`}>
+            <Mail size={18} />
+            {profile.email}
+          </a>
+          <a className="inline-flex items-center gap-3 text-ink/75 hover:text-moss" href={`tel:${profile.phone}`}>
+            <Phone size={18} />
+            Zalo: {profile.zalo}
+          </a>
+          <a className="inline-flex items-center gap-3 text-ink/75 hover:text-moss" href={profile.github}>
+            <Github size={18} />
+            GitHub
+          </a>
+          <a className="inline-flex items-center gap-3 text-ink/75 hover:text-moss" href={profile.facebook}>
+            <ExternalLink size={18} />
+            Facebook
+          </a>
         </div>
       </section>
 
       <footer className="border-t border-ink/10 py-8">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 text-sm text-ink/60 sm:px-6 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} {profile.name}. Built with Next.js + NestJS.</p>
-          <p>Backend API: http://localhost:4000</p>
+          <p>Personal portfolio for Node.js backend roles.</p>
         </div>
       </footer>
     </main>

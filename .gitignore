@@ -1,5 +1,6 @@
 node_modules
 .next
+.next-dev
 dist
 coverage
 .env
@@ -12,3 +13,4 @@ yarn-error.log*
 pnpm-debug.log*
 .DS_Store
 Thumbs.db
+/*.pdf

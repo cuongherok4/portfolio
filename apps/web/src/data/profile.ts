@@ -1,9 +1,20 @@
+export type Project = {
+  name: string;
+  type: string;
+  problem: string;
+  role: string;
+  stack: string[];
+  result: string;
+  repo?: string;
+  article?: string;
+};
+
 export const profile = {
   name: "Hoang Manh Cuong",
   role: "Node.js Backend / Full-stack Developer",
   headline:
     "Fresher developer tập trung xây dựng REST API rõ ràng, backend NestJS có cấu trúc và sản phẩm web có thể chạy thật.",
-  email: "your.email@example.com",
+  email: "cuongherok4@gmail.com",
   phone: "0336388758",
   zalo: "0336388758",
   github: "https://github.com/cuongherok4",
@@ -43,38 +54,38 @@ export const skills = [
   }
 ];
 
-export const projects = [
+export const projects: Project[] = [
   {
-    name: "VPT Code Arena",
-    type: "Full-stack / Coding Platform",
+    name: "VPT Code Arena NPT",
+    type: "Java + Node.js / Full-stack Coding Platform",
     problem:
       "Xây dựng nền tảng luyện tập/làm bài lập trình, cần tổ chức dữ liệu bài toán, người dùng và luồng nộp bài rõ ràng.",
-    role: "Thiết kế cấu trúc ứng dụng, phát triển các luồng backend và giao diện phục vụ trải nghiệm luyện code.",
-    stack: ["Next.js", "Node.js", "REST API", "Database"],
+    role: "Tự thiết kế cấu trúc ứng dụng, phát triển các luồng backend và giao diện phục vụ trải nghiệm luyện code.",
+    stack: ["Java", "Node.js", "Next.js", "REST API", "Database"],
     result:
-      "Dự án thể hiện khả năng triển khai sản phẩm full-stack có bài toán nghiệp vụ cụ thể.",
+      "Dự án cá nhân thể hiện khả năng triển khai sản phẩm full-stack có bài toán nghiệp vụ cụ thể.",
     repo: "https://github.com/cuongherok4/vpt-code-arena"
   },
   {
-    name: "Personal Portfolio API",
-    type: "Node.js Full-stack",
+    name: "Blockchain Copyright Registration",
+    type: "Node.js + Solidity / Blockchain Backend",
     problem:
-      "Portfolio cần chứng minh năng lực full-stack bằng frontend gọi API backend riêng.",
-    role: "Dựng Next.js App Router, NestJS REST API, contact endpoint và cấu trúc monorepo.",
-    stack: ["Next.js", "NestJS", "TypeScript", "REST API"],
+      "Ứng dụng blockchain vào đăng ký bản quyền, cần quản lý dữ liệu và minh chứng sở hữu minh bạch.",
+    role: "Tự xây dựng luồng đăng ký, lưu trữ thông tin bản quyền và tích hợp logic blockchain.",
+    stack: ["Node.js", "Solidity", "Smart Contract", "Backend"],
     result:
-      "Trang portfolio có backend thật, dễ bổ sung database, email service và analytics tải CV.",
-    repo: "https://github.com/cuongherok4/portfolio"
+      "Dự án cá nhân thể hiện khả năng dùng Node.js ở lớp backend khi tích hợp với smart contract.",
+    repo: "https://github.com/cuongherok4/Using-blockchain-to-register-copyright"
   },
   {
     name: "Phone Store",
-    type: "Backend Admin",
+    type: "PHP Laravel / Backend Admin",
     problem:
       "Quản lý sản phẩm điện thoại với biến thể, thuộc tính, hình ảnh và quy trình CRUD.",
-    role: "Xây dựng luồng quản trị, model dữ liệu và các màn hình thao tác nội bộ.",
-    stack: ["Laravel", "MySQL", "Blade", "Bootstrap"],
+    role: "Tự xây dựng luồng quản trị, model dữ liệu và các màn hình thao tác nội bộ.",
+    stack: ["PHP", "Laravel", "MySQL", "Blade", "Bootstrap"],
     result:
-      "Nhấn mạnh tư duy backend CRUD, quan hệ dữ liệu và thao tác quản trị thực tế.",
+      "Dự án cá nhân nhấn mạnh tư duy backend CRUD, quan hệ dữ liệu và thao tác quản trị thực tế.",
     repo: "https://github.com/cuongherok4/phone-store"
   },
   {
@@ -82,33 +93,44 @@ export const projects = [
     type: "Node.js / AI Backend",
     problem:
       "Phát hiện cuộc gọi lừa đảo bằng AI, cần backend tiếp nhận dữ liệu và phục vụ luồng xử lý/phân tích.",
-    role: "Phát triển backend cho ứng dụng AI scam detection, tập trung API và luồng tích hợp mô hình.",
-    stack: ["Node.js", "Backend API", "AI Integration"],
+    role: "Tự phát triển backend cho ứng dụng AI scam detection, tập trung API và luồng tích hợp mô hình.",
+    stack: ["Node.js", "REST API", "AI Integration", "Backend"],
     result:
-      "Dự án kết nối trực tiếp năng lực backend Node.js với bài toán AI có tính ứng dụng.",
+      "Dự án cá nhân kết hợp đúng định hướng Node.js backend với bài toán AI có tính ứng dụng.",
     repo: "https://github.com/cuongherok4/ai-scam-call-detection-backend",
     article: "https://vjai.org.vn/vn/vjai/article/view/21/190"
   },
   {
-    name: "Blockchain Copyright Registration",
-    type: "Blockchain / Backend",
+    name: "VPT AI Product Advisor",
+    type: "Node.js / AI Product Advisory",
     problem:
-      "Ứng dụng blockchain vào đăng ký bản quyền, cần quản lý dữ liệu và minh chứng sở hữu minh bạch.",
-    role: "Xây dựng luồng đăng ký, lưu trữ thông tin bản quyền và tích hợp logic blockchain.",
-    stack: ["Blockchain", "Smart Contract", "Backend"],
+      "Xây dựng trợ lý tư vấn sản phẩm dựa trên nhu cầu người dùng, cần kết hợp dữ liệu sản phẩm với luồng hội thoại dễ hiểu.",
+    role: "Tự thiết kế luồng tư vấn, tổ chức dữ liệu sản phẩm và phát triển phần tích hợp AI cho trải nghiệm gợi ý.",
+    stack: ["Node.js", "RAG", "Product Data", "Backend API"],
     result:
-      "Thể hiện khả năng tìm hiểu công nghệ mới và áp dụng vào bài toán xác thực dữ liệu.",
-    repo: "https://github.com/cuongherok4/Using-blockchain-to-register-copyright"
+      "Dự án cá nhân thể hiện khả năng đưa AI vào bài toán tư vấn sản phẩm thực tế.",
+    repo: "https://github.com/cuongherok4/vpt-ai-product-advisor"
   },
   {
     name: "RAG Laptop Advisory Chatbot",
-    type: "AI / Graduation Project",
+    type: "Python / AI Graduation Project",
     problem:
       "Hỗ trợ tư vấn laptop dựa trên tri thức sản phẩm và phản hồi có kiểm soát.",
-    role: "Thiết kế pipeline RAG, vector store, prompt flow và vòng human-in-the-loop.",
-    stack: ["LangChain", "ChromaDB", "Ollama", "Llama3.2:3b"],
+    role: "Tự thiết kế pipeline RAG, vector store, prompt flow và vòng human-in-the-loop.",
+    stack: ["Python", "LangChain", "ChromaDB", "Ollama", "Llama3.2:3b"],
     result:
-      "Thể hiện khả năng kết hợp backend workflow với AI tooling trong bài toán có ngữ cảnh."
+      "Dự án cá nhân/đồ án thể hiện khả năng kết hợp backend workflow với AI tooling trong bài toán có ngữ cảnh."
+  },
+  {
+    name: "Personal Portfolio API",
+    type: "NestJS / Next.js Full-stack",
+    problem:
+      "Portfolio cần chứng minh năng lực full-stack bằng frontend gọi API backend riêng.",
+    role: "Tự dựng Next.js App Router, NestJS REST API, health endpoint và cấu trúc monorepo.",
+    stack: ["NestJS", "Node.js", "Next.js", "TypeScript", "REST API"],
+    result:
+      "Dự án cá nhân phục vụ tuyển dụng, dùng trực tiếp stack Node.js/NestJS mà mình đang ứng tuyển.",
+    repo: "https://github.com/cuongherok4/portfolio"
   }
 ];
 
@@ -116,7 +138,7 @@ export const experience = [
   {
     role: "Backend Developer",
     company: "HTS Company",
-    period: "Cập nhật thời gian làm việc",
+    period: "",
     details:
       "Tham gia phát triển backend với NestJS, làm việc với API, validation và các luồng nghiệp vụ phía server."
   }
